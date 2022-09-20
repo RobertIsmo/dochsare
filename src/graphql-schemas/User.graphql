@@ -1,0 +1,26 @@
+type User {
+	_id: ID!
+	datecreated: Date!
+	username: String!
+	email: String!
+	password: String!
+}
+
+input SignInField {
+	username: String!
+	password: String!
+}
+input SignUpField {
+	username: String!
+	password: String!
+	email: String!
+}
+
+type Query {
+	me: User
+	signin(fields: SignInField!): Boolean
+}
+type Mutation {
+	signup(fields: SignUpField!): Boolean
+	deleteUser: Boolean
+}

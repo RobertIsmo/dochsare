@@ -1,0 +1,7 @@
+scalar Date
+scalar Location
+
+schema {
+	query: Query
+	mutation: Mutation
+}

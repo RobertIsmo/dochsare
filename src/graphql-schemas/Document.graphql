@@ -1,0 +1,23 @@
+type Document {
+	_id: ID!
+	datecreated: Date!
+	name: String!
+	location: String!
+	owner: User!
+	shared: [User!]!
+}
+
+input CreateDocumentField {
+	name: String!
+}
+
+type Query {
+	myDocuments: [Document]
+	sharedDocuments: [Document]
+}
+type Mutation {
+	createDocument(fields: CreateDocumentField!): Document
+	deleteDocument(id: ID!): Boolean
+	shareDocument(id: ID!, to: ID!): Document
+	changeDocument(id: ID!, fields: CreateDocumentField!): Document
+}

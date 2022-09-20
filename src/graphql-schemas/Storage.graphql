@@ -1,0 +1,4 @@
+type Query {
+	put(name: String!): String
+	get(name: String!): String
+}
